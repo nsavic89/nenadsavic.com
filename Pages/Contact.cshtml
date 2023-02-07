@@ -1,0 +1,43 @@
+﻿@page
+@model nenadsavic.com.Pages.ContactModel
+@{
+    string labelClasses = "form-label col-form-label col-md-4 col-sm-12";
+    string fieldClasses = "col-md-4 col-sm-12";
+}
+
+
+<h2>Contact Form</h2>
+
+<p>
+    Please send your message(s) by fulfilling the form below. 
+    I will answer as soon as possible.
+</p>
+
+<form method="post">
+    <div class="row">
+        <label class="@labelClasses">Subject:</label>
+        <div class="@fieldClasses">
+            <input asp-for="Subject" type="text" class="form-control" required />
+        </div>
+    </div>
+
+    <div class="row mt-2">
+        <label class="@labelClasses">Your e-mail address:</label>
+        <div class="@fieldClasses">
+            <input asp-for="Email" type="email" class="form-control" required />
+        </div>
+    </div>
+
+    <div class="row mt-2">
+        <label class="@labelClasses">Mesage:</label>
+        <div class="@fieldClasses">
+            <textarea asp-for="Message" class="form-control" rows="5" minlength="25" required></textarea>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-md-8 text-end">
+            <input type="submit" value="Send" class="btn btn-dark" />
+        </div>
+    </div>
+</form>
