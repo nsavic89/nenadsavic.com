@@ -1,5 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using nenadsavic.com.Models;
+using nenadsavic.com.Data;
+using System.Runtime.Serialization;
 
 namespace nenadsavic.com.Pages
 {
@@ -8,23 +11,19 @@ namespace nenadsavic.com.Pages
 
         // Contact form input fields
         [BindProperty]
-        public string? Subject { get; set; }
-
-        [BindProperty]
-        public string? Email { get; set; }
-
-        [BindProperty]
-        public string? Message { get; set; }
-
+        public Contact Contact { get; set; }
 
         public void OnGet()
         {
-        }
 
+        }
 
         public void OnPost()
         {
             // Make a database record for the received message
+            using var db = new DataContext();
+            db.Add(Contact);
+            db.SaveChanges();
         }
     }
 }

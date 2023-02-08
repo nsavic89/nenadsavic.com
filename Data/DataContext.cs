@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Hosting;
 using nenadsavic.com.Models;
 
 namespace nenadsavic.com.Data
@@ -14,7 +13,7 @@ namespace nenadsavic.com.Data
         {
             var folder = Environment.SpecialFolder.LocalApplicationData;
             var path = Environment.GetFolderPath(folder);
-            DbPath = System.IO.Path.Join(path, "database.db");
+            DbPath = Path.Join(path, "database.db");
         }
 
         // The following configures EF to create a Sqlite database file in the

@@ -17,21 +17,21 @@
     <div class="row">
         <label class="@labelClasses">Subject:</label>
         <div class="@fieldClasses">
-            <input asp-for="Subject" type="text" class="form-control" required />
+            <input asp-for="Contact.Subject" type="text" class="form-control" required />
         </div>
     </div>
 
     <div class="row mt-2">
         <label class="@labelClasses">Your e-mail address:</label>
         <div class="@fieldClasses">
-            <input asp-for="Email" type="email" class="form-control" required />
+            <input asp-for="Contact.Email" type="email" class="form-control" required />
         </div>
     </div>
 
     <div class="row mt-2">
         <label class="@labelClasses">Mesage:</label>
         <div class="@fieldClasses">
-            <textarea asp-for="Message" class="form-control" rows="5" minlength="25" required></textarea>
+            <textarea asp-for="Contact.Message" class="form-control" rows="5" minlength="25" required></textarea>
         </div>
     </div>
 
